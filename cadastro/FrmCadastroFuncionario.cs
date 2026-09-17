@@ -16,5 +16,10 @@ namespace MintOs.cadastro
         {
             InitializeComponent();
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //Mysql
+        }
     }
 }

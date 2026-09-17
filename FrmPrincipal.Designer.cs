@@ -242,15 +242,17 @@
             // 
             // Img02
             // 
+            this.Img02.Image = global::MintOs.Properties.Resources.fluxo;
             this.Img02.Location = new System.Drawing.Point(181, 73);
             this.Img02.Name = "Img02";
             this.Img02.Size = new System.Drawing.Size(132, 84);
+            this.Img02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Img02.TabIndex = 2;
             this.Img02.TabStop = false;
             // 
             // Img01
             // 
-            this.Img01.Image = global::MintOs.Properties.Resources.icon_icons__1_1;
+            this.Img01.Image = global::MintOs.Properties.Resources.venda1;
             this.Img01.Location = new System.Drawing.Point(24, 73);
             this.Img01.Name = "Img01";
             this.Img01.Size = new System.Drawing.Size(132, 84);
@@ -271,6 +273,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuPrincipal;
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Menu Principal";
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
