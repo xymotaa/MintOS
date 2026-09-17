@@ -29,212 +29,240 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroFuncionario));
-            this.labelnome = new System.Windows.Forms.Label();
-            this.labelcpf = new System.Windows.Forms.Label();
-            this.labeltelefone = new System.Windows.Forms.Label();
-            this.labelendereco = new System.Windows.Forms.Label();
-            this.labelcargo = new System.Windows.Forms.Label();
-            this.labelfoto = new System.Windows.Forms.Label();
-            this.textNome = new System.Windows.Forms.TextBox();
-            this.textTelefone = new System.Windows.Forms.TextBox();
-            this.textEndereco = new System.Windows.Forms.TextBox();
-            this.textCpf = new System.Windows.Forms.TextBox();
-            this.comboBoxCargo = new System.Windows.Forms.ComboBox();
-            this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            labelnome = new Label();
+            labelcpf = new Label();
+            labeltelefone = new Label();
+            labelendereco = new Label();
+            labelcargo = new Label();
+            labelfoto = new Label();
+            textNome = new TextBox();
+            textTelefone = new TextBox();
+            textEndereco = new TextBox();
+            textCpf = new TextBox();
+            comboBoxCargo = new ComboBox();
+            pictureBoxFoto = new PictureBox();
+            dataGridView1 = new DataGridView();
+            btnNovo = new Button();
+            btnSalvar = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
+            btnFoto = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFoto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // labelnome
             // 
-            this.labelnome.AutoSize = true;
-            this.labelnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnome.Location = new System.Drawing.Point(34, 46);
-            this.labelnome.Name = "labelnome";
-            this.labelnome.Size = new System.Drawing.Size(44, 16);
-            this.labelnome.TabIndex = 0;
-            this.labelnome.Text = "Nome";
+            labelnome.AutoSize = true;
+            labelnome.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelnome.Location = new Point(40, 53);
+            labelnome.Margin = new Padding(4, 0, 4, 0);
+            labelnome.Name = "labelnome";
+            labelnome.Size = new Size(44, 16);
+            labelnome.TabIndex = 0;
+            labelnome.Text = "Nome";
             // 
             // labelcpf
             // 
-            this.labelcpf.AutoSize = true;
-            this.labelcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcpf.Location = new System.Drawing.Point(231, 123);
-            this.labelcpf.Name = "labelcpf";
-            this.labelcpf.Size = new System.Drawing.Size(33, 16);
-            this.labelcpf.TabIndex = 1;
-            this.labelcpf.Text = "CPF";
+            labelcpf.AutoSize = true;
+            labelcpf.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelcpf.Location = new Point(270, 142);
+            labelcpf.Margin = new Padding(4, 0, 4, 0);
+            labelcpf.Name = "labelcpf";
+            labelcpf.Size = new Size(33, 16);
+            labelcpf.TabIndex = 1;
+            labelcpf.Text = "CPF";
             // 
             // labeltelefone
             // 
-            this.labeltelefone.AutoSize = true;
-            this.labeltelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltelefone.Location = new System.Drawing.Point(34, 121);
-            this.labeltelefone.Name = "labeltelefone";
-            this.labeltelefone.Size = new System.Drawing.Size(61, 16);
-            this.labeltelefone.TabIndex = 2;
-            this.labeltelefone.Text = "Telefone";
+            labeltelefone.AutoSize = true;
+            labeltelefone.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labeltelefone.Location = new Point(40, 140);
+            labeltelefone.Margin = new Padding(4, 0, 4, 0);
+            labeltelefone.Name = "labeltelefone";
+            labeltelefone.Size = new Size(61, 16);
+            labeltelefone.TabIndex = 2;
+            labeltelefone.Text = "Telefone";
             // 
             // labelendereco
             // 
-            this.labelendereco.AutoSize = true;
-            this.labelendereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelendereco.Location = new System.Drawing.Point(34, 198);
-            this.labelendereco.Name = "labelendereco";
-            this.labelendereco.Size = new System.Drawing.Size(66, 16);
-            this.labelendereco.TabIndex = 3;
-            this.labelendereco.Text = "Endereço";
+            labelendereco.AutoSize = true;
+            labelendereco.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelendereco.Location = new Point(40, 228);
+            labelendereco.Margin = new Padding(4, 0, 4, 0);
+            labelendereco.Name = "labelendereco";
+            labelendereco.Size = new Size(66, 16);
+            labelendereco.TabIndex = 3;
+            labelendereco.Text = "Endereço";
             // 
             // labelcargo
             // 
-            this.labelcargo.AutoSize = true;
-            this.labelcargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcargo.Location = new System.Drawing.Point(34, 270);
-            this.labelcargo.Name = "labelcargo";
-            this.labelcargo.Size = new System.Drawing.Size(44, 16);
-            this.labelcargo.TabIndex = 4;
-            this.labelcargo.Text = "Cargo";
+            labelcargo.AutoSize = true;
+            labelcargo.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelcargo.Location = new Point(40, 312);
+            labelcargo.Margin = new Padding(4, 0, 4, 0);
+            labelcargo.Name = "labelcargo";
+            labelcargo.Size = new Size(44, 16);
+            labelcargo.TabIndex = 4;
+            labelcargo.Text = "Cargo";
             // 
             // labelfoto
             // 
-            this.labelfoto.AutoSize = true;
-            this.labelfoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelfoto.Location = new System.Drawing.Point(231, 296);
-            this.labelfoto.Name = "labelfoto";
-            this.labelfoto.Size = new System.Drawing.Size(34, 16);
-            this.labelfoto.TabIndex = 5;
-            this.labelfoto.Text = "Foto";
+            labelfoto.AutoSize = true;
+            labelfoto.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelfoto.Location = new Point(270, 342);
+            labelfoto.Margin = new Padding(4, 0, 4, 0);
+            labelfoto.Name = "labelfoto";
+            labelfoto.Size = new Size(34, 16);
+            labelfoto.TabIndex = 5;
+            labelfoto.Text = "Foto";
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(37, 74);
-            this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(344, 20);
-            this.textNome.TabIndex = 6;
+            textNome.Location = new Point(43, 85);
+            textNome.Margin = new Padding(4, 3, 4, 3);
+            textNome.Name = "textNome";
+            textNome.Size = new Size(401, 23);
+            textNome.TabIndex = 6;
             // 
             // textTelefone
             // 
-            this.textTelefone.Location = new System.Drawing.Point(37, 147);
-            this.textTelefone.Name = "textTelefone";
-            this.textTelefone.Size = new System.Drawing.Size(156, 20);
-            this.textTelefone.TabIndex = 7;
+            textTelefone.Location = new Point(43, 170);
+            textTelefone.Margin = new Padding(4, 3, 4, 3);
+            textTelefone.Name = "textTelefone";
+            textTelefone.Size = new Size(181, 23);
+            textTelefone.TabIndex = 7;
             // 
             // textEndereco
             // 
-            this.textEndereco.Location = new System.Drawing.Point(37, 225);
-            this.textEndereco.Name = "textEndereco";
-            this.textEndereco.Size = new System.Drawing.Size(344, 20);
-            this.textEndereco.TabIndex = 8;
+            textEndereco.Location = new Point(43, 260);
+            textEndereco.Margin = new Padding(4, 3, 4, 3);
+            textEndereco.Name = "textEndereco";
+            textEndereco.Size = new Size(401, 23);
+            textEndereco.TabIndex = 8;
             // 
             // textCpf
             // 
-            this.textCpf.Location = new System.Drawing.Point(234, 147);
-            this.textCpf.Name = "textCpf";
-            this.textCpf.Size = new System.Drawing.Size(147, 20);
-            this.textCpf.TabIndex = 9;
+            textCpf.Location = new Point(273, 170);
+            textCpf.Margin = new Padding(4, 3, 4, 3);
+            textCpf.Name = "textCpf";
+            textCpf.Size = new Size(171, 23);
+            textCpf.TabIndex = 9;
             // 
             // comboBoxCargo
             // 
-            this.comboBoxCargo.FormattingEnabled = true;
-            this.comboBoxCargo.Items.AddRange(new object[] {
-            "Gerente",
-            "Atendente"});
-            this.comboBoxCargo.Location = new System.Drawing.Point(37, 296);
-            this.comboBoxCargo.Name = "comboBoxCargo";
-            this.comboBoxCargo.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCargo.TabIndex = 10;
+            comboBoxCargo.FormattingEnabled = true;
+            comboBoxCargo.Items.AddRange(new object[] { "Gerente", "Atendente" });
+            comboBoxCargo.Location = new Point(43, 342);
+            comboBoxCargo.Margin = new Padding(4, 3, 4, 3);
+            comboBoxCargo.Name = "comboBoxCargo";
+            comboBoxCargo.Size = new Size(140, 23);
+            comboBoxCargo.TabIndex = 10;
             // 
             // pictureBoxFoto
             // 
-            this.pictureBoxFoto.Location = new System.Drawing.Point(484, 46);
-            this.pictureBoxFoto.Name = "pictureBoxFoto";
-            this.pictureBoxFoto.Size = new System.Drawing.Size(210, 199);
-            this.pictureBoxFoto.TabIndex = 11;
-            this.pictureBoxFoto.TabStop = false;
+            pictureBoxFoto.Location = new Point(716, 53);
+            pictureBoxFoto.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxFoto.Name = "pictureBoxFoto";
+            pictureBoxFoto.Size = new Size(245, 230);
+            pictureBoxFoto.TabIndex = 11;
+            pictureBoxFoto.TabStop = false;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 342);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(820, 112);
-            this.dataGridView1.TabIndex = 12;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(43, 395);
+            dataGridView1.Margin = new Padding(4, 3, 4, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(957, 129);
+            dataGridView1.TabIndex = 12;
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(47, 474);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(88, 23);
-            this.btnNovo.TabIndex = 13;
-            this.btnNovo.Text = "Novo Usuário";
-            this.btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Location = new Point(55, 547);
+            btnNovo.Margin = new Padding(4, 3, 4, 3);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Size = new Size(103, 27);
+            btnNovo.TabIndex = 13;
+            btnNovo.Text = "Novo Usuário";
+            btnNovo.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(141, 474);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 23);
-            this.btnSalvar.TabIndex = 14;
-            this.btnSalvar.Text = "Salvar Alterações";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            btnSalvar.Location = new Point(164, 547);
+            btnSalvar.Margin = new Padding(4, 3, 4, 3);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(117, 27);
+            btnSalvar.TabIndex = 14;
+            btnSalvar.Text = "Salvar Alterações";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(263, 474);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(81, 23);
-            this.btnEditar.TabIndex = 15;
-            this.btnEditar.Text = "Editar Usuário";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Location = new Point(307, 547);
+            btnEditar.Margin = new Padding(4, 3, 4, 3);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(94, 27);
+            btnEditar.TabIndex = 15;
+            btnEditar.Text = "Editar Usuário";
+            btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(392, 473);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(94, 23);
-            this.btnExcluir.TabIndex = 16;
-            this.btnExcluir.Text = "Excluir Usuário";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Location = new Point(457, 546);
+            btnExcluir.Margin = new Padding(4, 3, 4, 3);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(110, 27);
+            btnExcluir.TabIndex = 16;
+            btnExcluir.Text = "Excluir Usuário";
+            btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnFoto
+            // 
+            btnFoto.Location = new Point(610, 53);
+            btnFoto.Name = "btnFoto";
+            btnFoto.Size = new Size(75, 23);
+            btnFoto.TabIndex = 17;
+            btnFoto.Text = "Foto";
+            btnFoto.UseVisualStyleBackColor = true;
+            btnFoto.Click += btnFoto_Click;
             // 
             // FrmCadastroFuncionario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 508);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBoxFoto);
-            this.Controls.Add(this.comboBoxCargo);
-            this.Controls.Add(this.textCpf);
-            this.Controls.Add(this.textEndereco);
-            this.Controls.Add(this.textTelefone);
-            this.Controls.Add(this.textNome);
-            this.Controls.Add(this.labelfoto);
-            this.Controls.Add(this.labelcargo);
-            this.Controls.Add(this.labelendereco);
-            this.Controls.Add(this.labeltelefone);
-            this.Controls.Add(this.labelcpf);
-            this.Controls.Add(this.labelnome);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmCadastroFuncionario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adicionar Funcionário";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1043, 586);
+            Controls.Add(btnFoto);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnEditar);
+            Controls.Add(btnSalvar);
+            Controls.Add(btnNovo);
+            Controls.Add(dataGridView1);
+            Controls.Add(pictureBoxFoto);
+            Controls.Add(comboBoxCargo);
+            Controls.Add(textCpf);
+            Controls.Add(textEndereco);
+            Controls.Add(textTelefone);
+            Controls.Add(textNome);
+            Controls.Add(labelfoto);
+            Controls.Add(labelcargo);
+            Controls.Add(labelendereco);
+            Controls.Add(labeltelefone);
+            Controls.Add(labelcpf);
+            Controls.Add(labelnome);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "FrmCadastroFuncionario";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Adicionar Funcionário";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFoto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -257,5 +285,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
+        private Button btnFoto;
     }
 }
