@@ -95,6 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\icon-icons %281%29.png" />
+    <None Include="Resources\icon-icons.png" />
+    <None Include="Resources\icon-icons %281%29.ico" />
+    <None Include="Resources\seta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

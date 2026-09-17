@@ -42,6 +42,10 @@
             this.comboBoxCargo = new System.Windows.Forms.ComboBox();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +54,7 @@
             // 
             this.labelnome.AutoSize = true;
             this.labelnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelnome.Location = new System.Drawing.Point(55, 114);
+            this.labelnome.Location = new System.Drawing.Point(34, 46);
             this.labelnome.Name = "labelnome";
             this.labelnome.Size = new System.Drawing.Size(44, 16);
             this.labelnome.TabIndex = 0;
@@ -60,7 +64,7 @@
             // 
             this.labelcpf.AutoSize = true;
             this.labelcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcpf.Location = new System.Drawing.Point(252, 191);
+            this.labelcpf.Location = new System.Drawing.Point(231, 123);
             this.labelcpf.Name = "labelcpf";
             this.labelcpf.Size = new System.Drawing.Size(33, 16);
             this.labelcpf.TabIndex = 1;
@@ -70,7 +74,7 @@
             // 
             this.labeltelefone.AutoSize = true;
             this.labeltelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltelefone.Location = new System.Drawing.Point(55, 189);
+            this.labeltelefone.Location = new System.Drawing.Point(34, 121);
             this.labeltelefone.Name = "labeltelefone";
             this.labeltelefone.Size = new System.Drawing.Size(61, 16);
             this.labeltelefone.TabIndex = 2;
@@ -80,7 +84,7 @@
             // 
             this.labelendereco.AutoSize = true;
             this.labelendereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelendereco.Location = new System.Drawing.Point(55, 266);
+            this.labelendereco.Location = new System.Drawing.Point(34, 198);
             this.labelendereco.Name = "labelendereco";
             this.labelendereco.Size = new System.Drawing.Size(66, 16);
             this.labelendereco.TabIndex = 3;
@@ -90,7 +94,7 @@
             // 
             this.labelcargo.AutoSize = true;
             this.labelcargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcargo.Location = new System.Drawing.Point(55, 338);
+            this.labelcargo.Location = new System.Drawing.Point(34, 270);
             this.labelcargo.Name = "labelcargo";
             this.labelcargo.Size = new System.Drawing.Size(44, 16);
             this.labelcargo.TabIndex = 4;
@@ -100,7 +104,7 @@
             // 
             this.labelfoto.AutoSize = true;
             this.labelfoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelfoto.Location = new System.Drawing.Point(252, 364);
+            this.labelfoto.Location = new System.Drawing.Point(231, 296);
             this.labelfoto.Name = "labelfoto";
             this.labelfoto.Size = new System.Drawing.Size(34, 16);
             this.labelfoto.TabIndex = 5;
@@ -108,28 +112,28 @@
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(58, 142);
+            this.textNome.Location = new System.Drawing.Point(37, 74);
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(344, 20);
             this.textNome.TabIndex = 6;
             // 
             // textTelefone
             // 
-            this.textTelefone.Location = new System.Drawing.Point(58, 215);
+            this.textTelefone.Location = new System.Drawing.Point(37, 147);
             this.textTelefone.Name = "textTelefone";
             this.textTelefone.Size = new System.Drawing.Size(156, 20);
             this.textTelefone.TabIndex = 7;
             // 
             // textEndereco
             // 
-            this.textEndereco.Location = new System.Drawing.Point(58, 293);
+            this.textEndereco.Location = new System.Drawing.Point(37, 225);
             this.textEndereco.Name = "textEndereco";
             this.textEndereco.Size = new System.Drawing.Size(344, 20);
             this.textEndereco.TabIndex = 8;
             // 
             // textCpf
             // 
-            this.textCpf.Location = new System.Drawing.Point(255, 215);
+            this.textCpf.Location = new System.Drawing.Point(234, 147);
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(147, 20);
             this.textCpf.TabIndex = 9;
@@ -140,14 +144,14 @@
             this.comboBoxCargo.Items.AddRange(new object[] {
             "Gerente",
             "Atendente"});
-            this.comboBoxCargo.Location = new System.Drawing.Point(58, 364);
+            this.comboBoxCargo.Location = new System.Drawing.Point(37, 296);
             this.comboBoxCargo.Name = "comboBoxCargo";
             this.comboBoxCargo.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCargo.TabIndex = 10;
             // 
             // pictureBoxFoto
             // 
-            this.pictureBoxFoto.Location = new System.Drawing.Point(488, 114);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(484, 46);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(210, 199);
             this.pictureBoxFoto.TabIndex = 11;
@@ -158,17 +162,57 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 408);
+            this.dataGridView1.Location = new System.Drawing.Point(37, 342);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(820, 46);
+            this.dataGridView1.Size = new System.Drawing.Size(820, 112);
             this.dataGridView1.TabIndex = 12;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Location = new System.Drawing.Point(47, 474);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(88, 23);
+            this.btnNovo.TabIndex = 13;
+            this.btnNovo.Text = "Novo Usuário";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(141, 474);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(100, 23);
+            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.Text = "Salvar Alterações";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(263, 474);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(81, 23);
+            this.btnEditar.TabIndex = 15;
+            this.btnEditar.Text = "Editar Usuário";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(392, 473);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(94, 23);
+            this.btnExcluir.TabIndex = 16;
+            this.btnExcluir.Text = "Excluir Usuário";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // FrmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 508);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBoxFoto);
             this.Controls.Add(this.comboBoxCargo);
@@ -208,5 +252,9 @@
         private System.Windows.Forms.ComboBox comboBoxCargo;
         private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

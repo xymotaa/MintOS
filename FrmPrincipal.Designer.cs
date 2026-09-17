@@ -51,15 +51,15 @@
             this.MenuRelatóriosEntradaSaídas = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuRelatóriosDespesas = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.Img01 = new System.Windows.Forms.PictureBox();
-            this.Img02 = new System.Windows.Forms.PictureBox();
-            this.Img04 = new System.Windows.Forms.PictureBox();
             this.Img03 = new System.Windows.Forms.PictureBox();
+            this.Img04 = new System.Windows.Forms.PictureBox();
+            this.Img02 = new System.Windows.Forms.PictureBox();
+            this.Img01 = new System.Windows.Forms.PictureBox();
             this.MenuPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Img01)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Img02)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Img04)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Img03)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img04)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img02)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img01)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPrincipal
@@ -131,13 +131,13 @@
             // MenuProdutosProdutos
             // 
             this.MenuProdutosProdutos.Name = "MenuProdutosProdutos";
-            this.MenuProdutosProdutos.Size = new System.Drawing.Size(180, 22);
+            this.MenuProdutosProdutos.Size = new System.Drawing.Size(122, 22);
             this.MenuProdutosProdutos.Text = "Produtos";
             // 
             // MenuProdutosEstoque
             // 
             this.MenuProdutosEstoque.Name = "MenuProdutosEstoque";
-            this.MenuProdutosEstoque.Size = new System.Drawing.Size(180, 22);
+            this.MenuProdutosEstoque.Size = new System.Drawing.Size(122, 22);
             this.MenuProdutosEstoque.Text = "Estoque";
             // 
             // MenuMovimentações
@@ -224,23 +224,13 @@
             this.MenuSair.Text = "Sair";
             this.MenuSair.Click += new System.EventHandler(this.MenuSair_Click);
             // 
-            // Img01
+            // Img03
             // 
-            this.Img01.Image = global::MintOs.Properties.Resources.icons8_shopping_cart_100;
-            this.Img01.Location = new System.Drawing.Point(24, 73);
-            this.Img01.Name = "Img01";
-            this.Img01.Size = new System.Drawing.Size(132, 84);
-            this.Img01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Img01.TabIndex = 1;
-            this.Img01.TabStop = false;
-            // 
-            // Img02
-            // 
-            this.Img02.Location = new System.Drawing.Point(181, 73);
-            this.Img02.Name = "Img02";
-            this.Img02.Size = new System.Drawing.Size(132, 84);
-            this.Img02.TabIndex = 2;
-            this.Img02.TabStop = false;
+            this.Img03.Location = new System.Drawing.Point(335, 73);
+            this.Img03.Name = "Img03";
+            this.Img03.Size = new System.Drawing.Size(132, 84);
+            this.Img03.TabIndex = 4;
+            this.Img03.TabStop = false;
             // 
             // Img04
             // 
@@ -250,13 +240,23 @@
             this.Img04.TabIndex = 3;
             this.Img04.TabStop = false;
             // 
-            // Img03
+            // Img02
             // 
-            this.Img03.Location = new System.Drawing.Point(335, 73);
-            this.Img03.Name = "Img03";
-            this.Img03.Size = new System.Drawing.Size(132, 84);
-            this.Img03.TabIndex = 4;
-            this.Img03.TabStop = false;
+            this.Img02.Location = new System.Drawing.Point(181, 73);
+            this.Img02.Name = "Img02";
+            this.Img02.Size = new System.Drawing.Size(132, 84);
+            this.Img02.TabIndex = 2;
+            this.Img02.TabStop = false;
+            // 
+            // Img01
+            // 
+            this.Img01.Image = global::MintOs.Properties.Resources.icon_icons__1_1;
+            this.Img01.Location = new System.Drawing.Point(24, 73);
+            this.Img01.Name = "Img01";
+            this.Img01.Size = new System.Drawing.Size(132, 84);
+            this.Img01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Img01.TabIndex = 1;
+            this.Img01.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -274,10 +274,10 @@
             this.Text = "Menu Principal";
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Img01)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Img02)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Img04)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Img03)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img04)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img02)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Img01)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
