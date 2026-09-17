@@ -55,7 +55,7 @@
             // 
             labelnome.AutoSize = true;
             labelnome.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelnome.Location = new Point(40, 53);
+            labelnome.Location = new Point(58, 195);
             labelnome.Margin = new Padding(4, 0, 4, 0);
             labelnome.Name = "labelnome";
             labelnome.Size = new Size(44, 16);
@@ -66,7 +66,7 @@
             // 
             labelcpf.AutoSize = true;
             labelcpf.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelcpf.Location = new Point(270, 142);
+            labelcpf.Location = new Point(288, 276);
             labelcpf.Margin = new Padding(4, 0, 4, 0);
             labelcpf.Name = "labelcpf";
             labelcpf.Size = new Size(33, 16);
@@ -77,7 +77,7 @@
             // 
             labeltelefone.AutoSize = true;
             labeltelefone.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labeltelefone.Location = new Point(40, 140);
+            labeltelefone.Location = new Point(58, 274);
             labeltelefone.Margin = new Padding(4, 0, 4, 0);
             labeltelefone.Name = "labeltelefone";
             labeltelefone.Size = new Size(61, 16);
@@ -88,7 +88,7 @@
             // 
             labelendereco.AutoSize = true;
             labelendereco.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelendereco.Location = new Point(40, 228);
+            labelendereco.Location = new Point(58, 355);
             labelendereco.Margin = new Padding(4, 0, 4, 0);
             labelendereco.Name = "labelendereco";
             labelendereco.Size = new Size(66, 16);
@@ -99,7 +99,7 @@
             // 
             labelcargo.AutoSize = true;
             labelcargo.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelcargo.Location = new Point(40, 312);
+            labelcargo.Location = new Point(61, 433);
             labelcargo.Margin = new Padding(4, 0, 4, 0);
             labelcargo.Name = "labelcargo";
             labelcargo.Size = new Size(44, 16);
@@ -110,7 +110,7 @@
             // 
             labelfoto.AutoSize = true;
             labelfoto.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelfoto.Location = new Point(270, 342);
+            labelfoto.Location = new Point(291, 433);
             labelfoto.Margin = new Padding(4, 0, 4, 0);
             labelfoto.Name = "labelfoto";
             labelfoto.Size = new Size(34, 16);
@@ -119,7 +119,7 @@
             // 
             // textNome
             // 
-            textNome.Location = new Point(43, 85);
+            textNome.Location = new Point(61, 227);
             textNome.Margin = new Padding(4, 3, 4, 3);
             textNome.Name = "textNome";
             textNome.Size = new Size(401, 23);
@@ -127,7 +127,7 @@
             // 
             // textTelefone
             // 
-            textTelefone.Location = new Point(43, 170);
+            textTelefone.Location = new Point(61, 304);
             textTelefone.Margin = new Padding(4, 3, 4, 3);
             textTelefone.Name = "textTelefone";
             textTelefone.Size = new Size(181, 23);
@@ -135,7 +135,7 @@
             // 
             // textEndereco
             // 
-            textEndereco.Location = new Point(43, 260);
+            textEndereco.Location = new Point(61, 387);
             textEndereco.Margin = new Padding(4, 3, 4, 3);
             textEndereco.Name = "textEndereco";
             textEndereco.Size = new Size(401, 23);
@@ -143,7 +143,7 @@
             // 
             // textCpf
             // 
-            textCpf.Location = new Point(273, 170);
+            textCpf.Location = new Point(291, 304);
             textCpf.Margin = new Padding(4, 3, 4, 3);
             textCpf.Name = "textCpf";
             textCpf.Size = new Size(171, 23);
@@ -153,18 +153,19 @@
             // 
             comboBoxCargo.FormattingEnabled = true;
             comboBoxCargo.Items.AddRange(new object[] { "Gerente", "Atendente" });
-            comboBoxCargo.Location = new Point(43, 342);
+            comboBoxCargo.Location = new Point(61, 462);
             comboBoxCargo.Margin = new Padding(4, 3, 4, 3);
             comboBoxCargo.Name = "comboBoxCargo";
-            comboBoxCargo.Size = new Size(140, 23);
+            comboBoxCargo.Size = new Size(181, 23);
             comboBoxCargo.TabIndex = 10;
             // 
             // pictureBoxFoto
             // 
-            pictureBoxFoto.Location = new Point(716, 53);
+            pictureBoxFoto.Location = new Point(196, 79);
             pictureBoxFoto.Margin = new Padding(4, 3, 4, 3);
             pictureBoxFoto.Name = "pictureBoxFoto";
-            pictureBoxFoto.Size = new Size(245, 230);
+            pictureBoxFoto.Size = new Size(107, 101);
+            pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxFoto.TabIndex = 11;
             pictureBoxFoto.TabStop = false;
             // 
@@ -172,17 +173,19 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(43, 395);
+            dataGridView1.GridColor = SystemColors.ActiveCaptionText;
+            dataGridView1.Location = new Point(555, 79);
             dataGridView1.Margin = new Padding(4, 3, 4, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(957, 129);
+            dataGridView1.Size = new Size(435, 406);
             dataGridView1.TabIndex = 12;
             // 
             // btnNovo
             // 
-            btnNovo.Location = new Point(55, 547);
+            btnNovo.Location = new Point(680, 517);
             btnNovo.Margin = new Padding(4, 3, 4, 3);
             btnNovo.Name = "btnNovo";
             btnNovo.Size = new Size(103, 27);
@@ -192,7 +195,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(164, 547);
+            btnSalvar.Location = new Point(555, 517);
             btnSalvar.Margin = new Padding(4, 3, 4, 3);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(117, 27);
@@ -203,7 +206,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(307, 547);
+            btnEditar.Location = new Point(791, 517);
             btnEditar.Margin = new Padding(4, 3, 4, 3);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(94, 27);
@@ -213,21 +216,21 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(457, 546);
+            btnExcluir.Location = new Point(893, 517);
             btnExcluir.Margin = new Padding(4, 3, 4, 3);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(110, 27);
+            btnExcluir.Size = new Size(97, 27);
             btnExcluir.TabIndex = 16;
             btnExcluir.Text = "Excluir Usuário";
             btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnFoto
             // 
-            btnFoto.Location = new Point(610, 53);
+            btnFoto.Location = new Point(291, 462);
             btnFoto.Name = "btnFoto";
-            btnFoto.Size = new Size(75, 23);
+            btnFoto.Size = new Size(174, 23);
             btnFoto.TabIndex = 17;
-            btnFoto.Text = "Foto";
+            btnFoto.Text = "Adicionar Foto";
             btnFoto.UseVisualStyleBackColor = true;
             btnFoto.Click += btnFoto_Click;
             // 
