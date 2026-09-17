@@ -30,7 +30,7 @@ namespace MintOs
             // Depois do duplo clique, se chaama o formulário de cadastro
             // Depois de chamar o formulário, cria uma estância do formulário e exibe ele como uma janela modal
             // O ShowDialog() exibe o formulário como uma janela modal, ou seja, o usuário não pode interagir com a janela principal até que a janela modal seja fechada.
-            cadastro.FrmCadastro Frm = new cadastro.FrmCadastro();
+            cadastro.FrmCadastroFuncionario Frm = new cadastro.FrmCadastroFuncionario();
             Frm.ShowDialog();
         }
     }

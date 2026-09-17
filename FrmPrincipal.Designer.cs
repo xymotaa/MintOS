@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.MenuPrincipal = new System.Windows.Forms.MenuStrip();
             this.MenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuCadastroFuncionários = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,7 @@
             this.MenuSair});
             this.MenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MenuPrincipal.Name = "MenuPrincipal";
-            this.MenuPrincipal.Size = new System.Drawing.Size(800, 24);
+            this.MenuPrincipal.Size = new System.Drawing.Size(894, 24);
             this.MenuPrincipal.TabIndex = 0;
             this.MenuPrincipal.Text = "menuStrip1";
             // 
@@ -235,7 +236,7 @@
             // 
             // Img02
             // 
-            this.Img02.Location = new System.Drawing.Point(173, 73);
+            this.Img02.Location = new System.Drawing.Point(181, 73);
             this.Img02.Name = "Img02";
             this.Img02.Size = new System.Drawing.Size(132, 84);
             this.Img02.TabIndex = 2;
@@ -261,15 +262,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 508);
             this.Controls.Add(this.Img03);
             this.Controls.Add(this.Img04);
             this.Controls.Add(this.Img02);
             this.Controls.Add(this.Img01);
             this.Controls.Add(this.MenuPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuPrincipal;
             this.Name = "FormPrincipal";
-            this.Text = "Principal";
+            this.Text = "Menu Principal";
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Img01)).EndInit();

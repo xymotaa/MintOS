@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MintOs.cadastro
 {
-    public partial class FrmCadastro : Form
+    public partial class FrmCadastroFuncionario : Form
     {
-        public FrmCadastro()
+        public FrmCadastroFuncionario()
         {
             InitializeComponent();
         }
