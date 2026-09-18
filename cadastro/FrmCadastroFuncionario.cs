@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Data;
 using MySqlConnector;
 using MintOs.Banco;
 
@@ -13,6 +14,112 @@ namespace MintOs.cadastro
         public FrmCadastroFuncionario()
         {
             InitializeComponent();
+            // Associa eventos que não foram configurados no Designer
+            this.Load += FrmCadastroFuncionario_Load;
+            btnExcluir.Click += btnExcluir_Click;
+        }
+
+        /// <summary>
+        /// Exclui o funcionário selecionado no DataGridView e remove a imagem associada do disco.
+        /// Procedimento:
+        /// 1. Verifica seleção
+        /// 2. Pede confirmação ao usuário
+        /// 3. Lê o nome do arquivo da coluna 'foto'
+        /// 4. Executa DELETE no banco
+        /// 5. Se DELETE bem-sucedido, remove o arquivo físico (DeleteImageFile) e recarrega grid
+        /// </summary>
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um funcionário para excluir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Tentar obter o id (coluna 'id') da linha selecionada; fallback para célula 0
+            var row = dataGridView1.CurrentRow;
+            object idObj = null;
+            try { idObj = row.Cells["id"].Value; } catch { idObj = row.Cells[0].Value; }
+
+            if (idObj == null)
+            {
+                MessageBox.Show("Não foi possível determinar o id do funcionário selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(idObj.ToString(), out int id))
+            {
+                MessageBox.Show("Id do funcionário inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var confirm = MessageBox.Show("Confirma exclusão do funcionário selecionado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm != DialogResult.Yes) return;
+
+            // Obter nome do arquivo da coluna 'foto' (se existir)
+            string fotoNome = null;
+            try { fotoNome = row.Cells["foto"].Value?.ToString(); } catch { fotoNome = null; }
+
+            try
+            {
+                using var conexao = Conexao.Criar();
+                conexao.Open();
+
+                using var cmd = new MySqlCommand("DELETE FROM funcionarios WHERE id = @id", conexao);
+                cmd.Parameters.AddWithValue("@id", id);
+                var afetadas = cmd.ExecuteNonQuery();
+
+                if (afetadas > 0)
+                {
+                    // Apagar arquivo de imagem referente (se houver)
+                    if (!string.IsNullOrWhiteSpace(fotoNome))
+                        DeleteImageFile(fotoNome);
+
+                    MessageBox.Show("Funcionário excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadFuncionarios();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum registro foi excluído. Verifique se o item existe.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao excluir funcionário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Carrega os funcionários do banco e popula o DataGridView.
+        /// Método simples que busca colunas essenciais e atribui um DataTable como DataSource.
+        /// </summary>
+        private void LoadFuncionarios()
+        {
+            try
+            {
+                using var conexao = Conexao.Criar();
+                conexao.Open();
+
+                var sql = "SELECT id, nome, cpf, telefone, cargo, endereco, foto FROM funcionarios ORDER BY id DESC";
+                using var cmd = new MySqlCommand(sql, conexao);
+                using var adapter = new MySqlConnector.MySqlDataAdapter(cmd);
+                var dt = new DataTable();
+                adapter.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+                dataGridView1.ReadOnly = true;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar funcionários: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FrmCadastroFuncionario_Load(object? sender, EventArgs e)
+        {
+            // Carrega lista de funcionários ao abrir o formulário
+            LoadFuncionarios();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
