@@ -139,3 +139,5 @@ FakesAssemblies/
 node_modules/
 // ...existing code...conexao/
 conexao/
+
+/banco/
