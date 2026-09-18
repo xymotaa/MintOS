@@ -155,9 +155,37 @@ namespace MintOs.cadastro
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                foto = dialog.FileName;
+                // Caminho selecionado pelo usuário
+                var caminhoSelecionado = dialog.FileName;
 
-                pictureBoxFoto.ImageLocation = foto;
+                try
+                {
+                    // Diretório de armazenamento das imagens da aplicação (AppData) para não depender de caminhos locais do usuário
+                    // Usar AppData evita problemas de permissões e mantém todas as imagens centralizadas
+                    var pastaImagens = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MintOs", "images");
+                    if (!Directory.Exists(pastaImagens))
+                        Directory.CreateDirectory(pastaImagens);
+
+                    // Gerar nome único para evitar colisões (GUID) e preservar extensão original
+                    var extensao = Path.GetExtension(caminhoSelecionado);
+                    var nomeArquivo = Guid.NewGuid().ToString() + extensao;
+                    var destino = Path.Combine(pastaImagens, nomeArquivo);
+
+                    // Copiar o arquivo selecionado para a pasta da aplicação
+                    File.Copy(caminhoSelecionado, destino, overwrite: true);
+
+                    // Armazenamos no campo 'foto' o caminho completo (poderíamos armazenar relativo conforme necessidade)
+                    foto = destino;
+
+                    // Exibir no PictureBox a imagem copiada
+                    pictureBoxFoto.ImageLocation = foto;
+                }
+                catch (Exception ex)
+                {
+                    // Em caso de falha ao copiar/abrir a imagem, informar o usuário e não setar o caminho
+                    MessageBox.Show($"Erro ao processar a imagem: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    foto = null;
+                }
             }
         }
 
