@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
 using MySqlConnector;
 using MintOs.Banco;
 
@@ -90,9 +91,9 @@ namespace MintOs.cadastro
 
                     string sql = @"
                         INSERT INTO funcionarios
-                        (nome, cpf, telefone, cargo, endereco)
+                        (nome, cpf, telefone, cargo, endereco, foto)
                         VALUES
-                        (@nome, @cpf, @telefone, @cargo, @endereco);
+                        (@nome, @cpf, @telefone, @cargo, @endereco, @foto);
                     ";
 
                     using (MySqlCommand comando = new MySqlCommand(sql, conexao))
@@ -102,6 +103,9 @@ namespace MintOs.cadastro
                         comando.Parameters.AddWithValue("@telefone", textTelefone.Text);
                         comando.Parameters.AddWithValue("@cargo", comboBoxCargo.Text);
                         comando.Parameters.AddWithValue("@endereco", textEndereco.Text);
+                        // Ler os bytes da imagem (ou DBNull se não houver imagem)
+                        var fotoBytes = LerImagemComoBytes();
+                        comando.Parameters.AddWithValue("@foto", (object)fotoBytes ?? DBNull.Value);
 
                         comando.ExecuteNonQuery();
                     }
@@ -154,6 +158,36 @@ namespace MintOs.cadastro
                 foto = dialog.FileName;
 
                 pictureBoxFoto.ImageLocation = foto;
+            }
+        }
+
+        /// <summary>
+        /// Lê o arquivo de imagem selecionado (campo 'foto') e retorna um array de bytes.
+        /// Motivos das verificações/implementação:
+        /// - Verifica se a variável 'foto' é nula/whitespace e se o arquivo existe para evitar exceções.
+        /// - Usa File.ReadAllBytes para ler o arquivo de forma atômica e garantir o fechamento do stream.
+        /// - Captura exceções e retorna null em falha; o código que chama converte null para DBNull para o banco.
+        /// </summary>
+        private byte[] LerImagemComoBytes()
+        {
+            // Se não houver caminho definido, retorna null (será traduzido para DBNull no parâmetro SQL)
+            if (string.IsNullOrWhiteSpace(foto))
+                return null;
+
+            // Evita tentar abrir um arquivo inexistente
+            if (!File.Exists(foto))
+                return null;
+
+            try
+            {
+                // File.ReadAllBytes abre o arquivo, lê tudo e fecha automaticamente
+                return File.ReadAllBytes(foto);
+            }
+            catch (Exception)
+            {
+                // Em caso de erro ao ler o arquivo, retorna null para que o código que chama lide com isso
+                // (p.ex. gravar DBNull no banco). Poderíamos também logar o erro ou exibir mensagem ao usuário.
+                return null;
             }
         }
     }
