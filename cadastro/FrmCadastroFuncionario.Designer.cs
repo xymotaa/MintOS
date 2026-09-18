@@ -161,8 +161,9 @@
             // 
             // pictureBoxFoto
             // 
-            pictureBoxFoto.Location = new Point(196, 79);
-            pictureBoxFoto.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxFoto.ErrorImage = null;
+            pictureBoxFoto.Location = new Point(205, 79);
+            pictureBoxFoto.Margin = new Padding(4, 3, 2, 3);
             pictureBoxFoto.Name = "pictureBoxFoto";
             pictureBoxFoto.Size = new Size(107, 101);
             pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom;

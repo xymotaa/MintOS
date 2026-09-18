@@ -138,3 +138,4 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 // ...existing code...conexao/
+conexao/
