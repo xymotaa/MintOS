@@ -111,6 +111,48 @@ namespace MintOs.cadastro
                     }
                 }
 
+        /// <summary>
+        /// Retorna o caminho completo da pasta onde as imagens são armazenadas.
+        /// Usamos %APPDATA%\MintOs\images para centralizar e evitar problemas de permissão.
+        /// </summary>
+        private string GetImagesFolderPath()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MintOs", "images");
+        }
+
+        /// <summary>
+        /// Retorna o caminho completo do arquivo de imagem a partir do nome armazenado no banco.
+        /// Retorna null se o nome for nulo/whitespace.
+        /// </summary>
+        public string GetImageFullPath(string imageFileName)
+        {
+            if (string.IsNullOrWhiteSpace(imageFileName))
+                return null;
+
+            return Path.Combine(GetImagesFolderPath(), imageFileName);
+        }
+
+        /// <summary>
+        /// Remove o arquivo de imagem do disco se existir. Usar quando for excluir/atualizar um registro
+        /// que referencia a imagem para evitar arquivos órfãos.
+        /// </summary>
+        public void DeleteImageFile(string imageFileName)
+        {
+            if (string.IsNullOrWhiteSpace(imageFileName))
+                return;
+
+            try
+            {
+                var fullPath = GetImageFullPath(imageFileName);
+                if (fullPath != null && File.Exists(fullPath))
+                    File.Delete(fullPath);
+            }
+            catch
+            {
+                // Falhas ao deletar não devem quebrar a aplicação; podemos logar se necessário.
+            }
+        }
+
                 MessageBox.Show(
                     "Funcionário cadastrado com sucesso!",
                     "MintOS",
@@ -174,11 +216,11 @@ namespace MintOs.cadastro
                     // Copiar o arquivo selecionado para a pasta da aplicação
                     File.Copy(caminhoSelecionado, destino, overwrite: true);
 
-                    // Armazenamos no campo 'foto' o caminho completo (poderíamos armazenar relativo conforme necessidade)
-                    foto = destino;
+                    // Armazenamos apenas o NOME do arquivo no campo 'foto' (mais portátil e economiza espaço no DB)
+                    foto = nomeArquivo;
 
-                    // Exibir no PictureBox a imagem copiada
-                    pictureBoxFoto.ImageLocation = foto;
+                    // Exibir no PictureBox a imagem copiada usando o caminho completo
+                    pictureBoxFoto.ImageLocation = destino;
                 }
                 catch (Exception ex)
                 {
